@@ -1,6 +1,7 @@
 import reflex as rx
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
+from link_bio.styles.styles import Size as Size
 
 
 def links() -> rx.Component:
@@ -48,5 +49,6 @@ def links() -> rx.Component:
             "De todo un poco",
             "https://www.youtube.com/channel/UCTbo3urQ9I8tB-wc3txsmXQ"
         ),
-        width="100%"
+        width="100%",
+        spacing=Size.MEDIUM.value
     )
