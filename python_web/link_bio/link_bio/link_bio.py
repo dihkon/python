@@ -4,6 +4,7 @@ from link_bio.views.header.header import header
 from link_bio.views.links.links import links
 from link_bio.components.footer import footer
 import link_bio.styles.styles as styles
+from link_bio.styles.styles import Size as Size
 
 
 
@@ -21,7 +22,8 @@ def index() -> rx.Component:
                 links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
-                margin_y=styles.Size.BIG.value
+                margin_y=Size.BIG.value,
+                padding=Size.BIG.value
             )   
         ),
         footer(),
@@ -32,7 +34,12 @@ def index() -> rx.Component:
     
 
 app = rx.App(
+    stylesheets=styles.STYLESHEETS,
     style=styles.BASE_STYLE
 )
-app.add_page(index)
+app.add_page(
+    index,
+    title="David Herranz | Un poco sobre mi",
+    description="Soy ingeniero de sistemas especialidado en entornos Middleware y Autonmatización."
+)
 app.compile()
